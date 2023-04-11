@@ -24,10 +24,20 @@ COMMIT;
 SELECT * FROM dept;
 SELECT deptno as 부서코드, deptname as 부서명 From dept;
 
+--특정한 자료 검색 : WHERE 절 조건
 SELECT * FROM dept 
 WHERE deptno = '1002';
 
+
+
 --부서 테이블 삭제
 DROP TABLE dept;
+
+--자료정렬 : ORDER BY 칼럼명 (ABC/DESC)
+
+SELECT * FROM dept
+ORDER BY deptno DESC;
+
+
 
 
