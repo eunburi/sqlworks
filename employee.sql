@@ -51,6 +51,14 @@ WHERE ename LIKE '이%';
 SELECT COUNT(*) as 사원수
 FROM emplyee;
 
---중복없이 부서번호를 검색하시오
-SELECT DISTINCT deptno
+--중복없이 부서번호를 검색하시오(DISTINCT 키워드)
+SELECT DISTINCT deptno 부서번호
 FROM emplyee;
+
+--GROUP BY 절(소속등 그룹화) 조건절 - HAVING 사용
+--부서별 급여총액을 구하시오
+SELECT deptno 부서, SUM(sal) 급여총액, AVG(sal) 급여평균
+FROM emplyee
+GROUP BY deptno
+HAVING AVG(sal) >= 3000000
+ORDER BY AVG(sal) DESC;
