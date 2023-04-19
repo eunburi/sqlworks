@@ -11,7 +11,7 @@ SELECT sal 급여,
     ROUND(sal/30,1) 결과1,
     ROUND(sal/30,0) 결과2,
      ROUND(sal/30,-1) 결과3
-FROM emplyee;
+FROM emplOyee;
 
 --sal을 30일로 나눈 후 소수 자리수에 따라 절삭(버림) 값 출력
 SELECT sal 급여,
@@ -19,7 +19,7 @@ SELECT sal 급여,
     TRUNC(sal/30,1) 결과1,
     TRUNC(sal/30,0) 결과2,
     TRUNC(sal/30,-1) 결과3
-FROM emplyee;
+FROM emplOyee;
 
 --고객별 평균 주문금액을 백원 단위로 반올림한 값을 구하시오
 SELECT custid 고객번호, ROUND(AVG(saleprice),-2) 평균주문금액
@@ -76,6 +76,17 @@ WHERE publisher = '굿스포츠';
 --날짜 함수
 --현재 날짜에서 20일전 날짜를 출력하시오
 SELECT SYSDATE -20 FROM DUAL;
+
+
+--4월 1일에서 10일 후 (특정한 날 : 문자형 -> 날짜형)
+SELECT TO_DATE('2023/04/01') + 10 FROM DUAL;
+
+--입사일 : 2022-01-01 퇴사일 : 2023-01-31
+
+SELECT
+    ROUND(MONTHS_BETWEEN(TO_DATE('2023-1-31')
+            ,TO_DATE('2022-1-1'))) 총개월수
+FROM DUAL;
 
 --3개월 후의 날짜 출력
 SELECT ADD_MONTHS(SYSDATE,3) 결과
