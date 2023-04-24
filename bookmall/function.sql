@@ -5,6 +5,11 @@ SELECT ABS(-10), ABS(10) FROM dual;
 --반올림 : ROUND(수,자릿수)
 SELECT ROUND(3.875, 2) FROM DUAL;
 
+--버림 : 
+SELECT TRUNC(3.875, 2) FROM DUAL;
+
+SELECT * FROM emplOyee;
+
 --sal을 30일로 나눈 후 소수 자리수에 따라 반올림 값 출력
 SELECT sal 급여,
     sal/30 일급,
@@ -21,8 +26,12 @@ SELECT sal 급여,
     TRUNC(sal/30,-1) 결과3
 FROM emplOyee;
 
+SELECT SUM(saleprice) 총판매금액, ROUND(AVG(saleprice),-2) 평균주문금액
+FROM orders;
+
+
 --고객별 평균 주문금액을 백원 단위로 반올림한 값을 구하시오
-SELECT custid 고객번호, ROUND(AVG(saleprice),-2) 평균주문금액
+SELECT custid 고객번호,ROUND(AVG(saleprice),-2) 평균주문금액
 FROM orders
 GROUP BY custid;
 
