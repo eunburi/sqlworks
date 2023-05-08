@@ -25,6 +25,8 @@ INSERT INTO employee VALUES (104, '양우주', 4500000, SYSDATE, '여자', '1000');
 INSERT INTO employee VALUES (105, '강남', 2600000, SYSDATE, '남자', '1000');
 INSERT INTO employee VALUES (106, '이해', 2500000, SYSDATE, '남자', '1000');
 
+drop table employee;
+
 -- 사원 자료 검색
 SELECT * FROM employee;
 
