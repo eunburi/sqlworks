@@ -19,7 +19,7 @@ CREATE TABLE t_board(
     hit     NUMBER DEFAULT 0,
     memberid    VARCHAR2(20) NOT NULL,
     CONSTRAINT FK_MemberBoard FOREIGN KEY(memberid)
-    REFERENCES t_member(memberid)
+    REFERENCES t_member(memberid) ON DELETE CASCADE
     
 );
 
@@ -37,4 +37,8 @@ COMMIT;
 
 SELECT * FROM t_member;
 SELECT * FROM t_board;
+
+
+DROP SEQUENCE b_seq; -- 시퀀스 삭제
+DROP TABLE t_board;  -- board 테이블 삭제
 
